@@ -11,7 +11,26 @@ D2T is a small, hacky way to export Excel Worksheets into PDF Tables.
 
 ## Usage
 
+```
+python main.py
+```
 
+Arguments
+
+- i, --infile <br> Input file path **(data/data.xlsx)**
+- o, --outfile <br> Output file path **(report.pdf)**
+- t, --title <br> Title in Document
+- f, --fontsize <br> Fontsize (must be valid css)
+- --html <br> Save corresponding html file
+- --align <br> Cell alignment *{**left**, right, center}*
+- --landscape <br> Enable landscape
+- -p, --pagenumber <br> starting pagenumber **(1)**
+- --disablepagenumber, <br> disable pagenumber
+- --pagenumberalign <br> pagenumber alignment *{left, **right**, center}*
+
+**Example:**
+
+``python main.py --html --align left -f "0.5em" -p 3 --landscape --pagenumberalign center``
 
 ## Requirements 
 
