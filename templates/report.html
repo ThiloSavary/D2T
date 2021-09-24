@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    {% if title %}<title>{{ title }}</title>{% endif %}
+    <style>
+        @page { {% if landscape %}size: landscape;{% endif %} margin: 1cm; }
+        table {
+            width: auto;
+            {% if fontsize %} font-size: {{ fontsize }};{% endif %}
+        }
+        td {
+            text-align: {{ align }};
+        }
+        th {
+            text-align: {{ align }};
+        }
+        {% if not disablepagenumber %}
+        @page :first {
+            counter-increment: page {{ pagenumber }};
+        }
+        @page {
+            @bottom-{{ pagenumberalign }} {
+                content: counter(page);
+                {% if fontsize %} font-size: {{ fontsize }};{% endif %}
+            }
+        }
+        {% endif %}
+
+    </style>
+</head>
+<body>
+    {% if title %}<h2>{{ title }}</h2>{% endif %}
+    <div id="table_container">
+        {{ table }}
+    </div>
+</body>
+</html>

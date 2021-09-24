@@ -2,3 +2,4 @@ venv/
 data/data.xlsx
 report.html
 report.pdf
+!templates/report.html
